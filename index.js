@@ -3,9 +3,13 @@ const express = require("express")
 const actionsRouter = require('./actions/actionsRouter')
 const projectsRouter = require('./projects/projectsRouter')
 
+const cors = require('cors')
+
+
 const server = express()
 
 server.use(express.json())
+server.use(cors());
 
 server.use("/api/actions", actionsRouter)
 server.use("/api/projects", projectsRouter)
